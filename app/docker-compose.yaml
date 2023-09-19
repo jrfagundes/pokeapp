@@ -1,0 +1,15 @@
+version: '2'
+services:
+    app:
+        container_name: app
+        build:
+            context: docker-app
+            dockerfile: Dockerfile
+        image: app:latest
+        ports:
+            - 8081:8080
+        networks:
+            - app-network    
+networks:
+    app-network:
+        driver: bridge
